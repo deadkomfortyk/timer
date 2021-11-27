@@ -56,8 +56,9 @@ export class TimeService {
     let miliseconds = rest;
     if(ms % 10 === 0) this.intervalSec = Math.floor(ms / 10);
     const seconds = this.intervalSec % 60;
+    rest = ms % 36000;
     const minutes = Math.floor(rest / 600);
-
+  
     return {
       minutes: this.convertToNumberString(minutes),
       seconds: this.convertToNumberString(seconds),
